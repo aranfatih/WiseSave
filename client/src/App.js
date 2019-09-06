@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from './home/home';
-import Profile from './profile/profile';
+
+import Home from './components/pages/Home';
 
 export default class App extends React.Component {
   render() {
@@ -10,7 +10,6 @@ export default class App extends React.Component {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/profile/:username" component={Profile}/>
         </Switch>
       </BrowserRouter>
     </div>
