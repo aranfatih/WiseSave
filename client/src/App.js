@@ -9,9 +9,10 @@ import {
 import MailIcon from "@material-ui/icons/Mail";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 // import Home from "./home/home";
 import Main from "./components/Main";
+import ProfileMain from "./components/pages/profile/ProfileMain";
 // import Profile from "./profile/profile";
 
 export default class App extends React.Component {
@@ -34,14 +35,16 @@ export default class App extends React.Component {
             >
               {this.fullList()}
             </Drawer>
+            <Main clicked={e => this.setState({ open: true })} />
             <Switch>
-              <Route
+              {/* <Route
                 exact
                 path="/"
                 render={() => (
                   <Main clicked={e => this.setState({ open: true })} />
                 )}
-              />
+              /> */}
+              <Route exact path="/Profile" render={() => <ProfileMain />} />
               {/* <Route exact path="/profile/:username" component={Profile} /> */}
             </Switch>
           </div>
@@ -58,10 +61,10 @@ export default class App extends React.Component {
         onKeyDown={() => this.setState({ open: false })}
       >
         <List>
-          {["Profile", "Create New", "History"].map((text, index) => (
+          {["Profile", "New", "History"].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                <Link to={"/" + text}>{text}</Link>
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
