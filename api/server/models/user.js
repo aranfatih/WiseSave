@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const Posts = require('./post')
+const mongoose = require("mongoose");
+const Posts = require("./post");
 
 let userSchema = mongoose.Schema({
   username: {
@@ -18,10 +18,11 @@ let userSchema = mongoose.Schema({
     required: true
   },
 
-  posts: [{
-    type: String
-  }]
+  phone: Number,
 
-})
+  passportImage: "String",
 
-let user = module.exports = mongoose.model('user', userSchema)
+  threads: [String]
+});
+
+let user = (module.exports = mongoose.model("user", userSchema));
