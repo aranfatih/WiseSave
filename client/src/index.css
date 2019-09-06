@@ -633,6 +633,62 @@ video {
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700&display=swap');
 
+.nav-icon {
+  margin: 1em;
+  width: 40px;
+}
+
+.nav-icon:after,
+.nav-icon:before,
+.nav-icon div {
+  background: #333;
+  border-radius: 3px;
+  content: ' ';
+  display: block;
+  height: 5px;
+  margin: 7px 0px;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-icon:hover:before {
+  transform: translateY(12px) rotate(135deg);
+}
+
+.nav-icon:hover:after {
+  transform: translateY(-12px) rotate(-135deg);
+}
+
+.nav-icon:hover div {
+  transform: scale(0);
+}
+
+.side {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background: #222;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.sidenav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  font-size: 16;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.side.nav-active {
+  width: 250px;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
