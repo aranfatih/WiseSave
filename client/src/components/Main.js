@@ -10,7 +10,15 @@ class Main extends Component {
   render() {
     return (
       <div>
-        <AppBar position="static">
+        <AppBar
+          position="static"
+          style={{
+            background: "white",
+            color: "rgb(0, 151, 226)",
+            boxShadow: "none",
+            width: "400px"
+          }}
+        >
           <Toolbar>
             <IconButton edge="start" color="inherit" aria-label="menu">
               <MenuIcon onClick={() => this.props.clicked()} />

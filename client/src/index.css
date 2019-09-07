@@ -11,6 +11,47 @@
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  font-family: "Montserrat" !important;
+}
+
+
+
+.buttonn{
+  width: 130px;
+  height: 60;
+  padding: 12px 0px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 12px;
+  background-color: #22B5FF;
+  border-radius: 24px;
+  -webkit-box-shadow: 0 7px 6px -6px #777;
+       -moz-box-shadow: 0 7px 6px -6px #777;
+            box-shadow: 0 7px 6px -6px #777;
+
+}
+
+.hover-shadow{
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+}
+
+.MuiDrawer-paperAnchorLeft {
+  width: 70%
+}
+
+.MuiTableCell-alignRight {
+  text-align: left !important;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22) !important;}
+
+.whitebtn {
+  background-color: white !important;
+  color: black;
 }
 
 /* Sections
