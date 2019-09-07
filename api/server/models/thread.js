@@ -24,7 +24,9 @@ const ThreadSchema = mongoose.Schema({
       amount: { type: Number, default: 0 },
       username: { type: String, default: "" }
     }
-  ]
+  ],
+
+  state: { type: Number, default: 1 }
 });
 
 let thread = (module.exports = mongoose.model("thread", ThreadSchema));

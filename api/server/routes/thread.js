@@ -55,4 +55,31 @@ router.get("/alldeposits/:name", (req, res) => {
   });
 });
 
+router.post("/queue", (req, res) => {
+  let flag = false;
+
+  Thread.find({ state: 1, goal: req.body.goal }, (err, data) => {
+    if (data) {
+      flag = true;
+      console.log(data);
+      const id = data[0];
+      console.log(id);
+      Thread.findByIdAndUpdate(
+        id,
+        { $push: { user: req.body.name } },
+        { $true: true },
+        (err, newData) => {
+          console.log(newData);
+          res.sendStatus(200);
+        }
+      );
+    }
+  });
+
+  if (!flag) {
+    let newEntry = new Thread(req.body);
+    newEntry.save(err => res.sendStatus(200));
+  }
+});
+
 module.exports = router;
