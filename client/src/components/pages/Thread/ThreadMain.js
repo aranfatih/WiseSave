@@ -46,11 +46,12 @@ class ThreadMain extends Component {
         <div style={{ marginTop: 16 }}>
           <Paper>
             <Table style={{ textAlign: "left" }}>
-              <TableHead>
+              <TableHead style={{ overflowX: "scroll" }}>
                 <TableRow>
                   <TableCell>Name</TableCell>
                   <TableCell align="right">Taken Amount</TableCell>
                   <TableCell align="right">Payed Amount</TableCell>
+                  <TableCell align="right">Confirmed</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -58,26 +59,31 @@ class ThreadMain extends Component {
                   <TableCell align="right">Zardash Kaya</TableCell>
                   <TableCell align="right">$0</TableCell>
                   <TableCell align="right">$0</TableCell>
+                  <TableCell align="right">Yes</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell align="right">Muhammed Saadwn</TableCell>
                   <TableCell align="right">$0</TableCell>
                   <TableCell align="right">$0</TableCell>
+                  <TableCell align="right">No</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell align="right">Akar Mahdi</TableCell>
                   <TableCell align="right">$0</TableCell>
                   <TableCell align="right">$0</TableCell>
+                  <TableCell align="right">No</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell align="right">James May</TableCell>
                   <TableCell align="right">$0</TableCell>
                   <TableCell align="right">$0</TableCell>
+                  <TableCell align="right">Yes</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell align="right">Linda Stewart</TableCell>
                   <TableCell align="right">$0</TableCell>
                   <TableCell align="right">$0</TableCell>
+                  <TableCell align="right">No</TableCell>
                 </TableRow>
               </TableBody>
             </Table>

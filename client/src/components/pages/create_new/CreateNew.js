@@ -1,9 +1,12 @@
+import { InputLabel } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import MenuItem from "@material-ui/core/MenuItem";
+import Select from "@material-ui/core/Select";
 import TextField from "@material-ui/core/TextField";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
@@ -11,7 +14,7 @@ import { Link } from "react-router-dom";
 class CreateNew extends Component {
   constructor(props) {
     super(props);
-    this.state = { type: 0, goal: 0, openModal: false, plan: 0 };
+    this.state = { type: 0, goal: 0, openModal: false, plan: 0, period: 3 };
   }
 
   render() {
@@ -62,6 +65,22 @@ class CreateNew extends Component {
               margin="normal"
               type="number"
             />
+
+            <InputLabel style={{ marginTop: 32 }} htmlFor="age-simple">
+              Period
+            </InputLabel>
+            <Select
+              value={this.state.period}
+              onChange={e => this.setState({ period: e.target.value })}
+              inputProps={{
+                name: "Period",
+                id: "age-simple"
+              }}
+            >
+              <MenuItem value={1}>Weekly</MenuItem>
+              <MenuItem value={2}>Every other week</MenuItem>
+              <MenuItem value={3}>Monthly</MenuItem>
+            </Select>
 
             <div
               style={{

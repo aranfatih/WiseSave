@@ -74,31 +74,38 @@ export default class App extends React.Component {
         onClick={() => this.setState({ open: false })}
         onKeyDown={() => this.setState({ open: false })}
       >
-        <div
-          style={{
-            width: "100%",
-            height: 100,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
-          }}
-        >
-          <img src="wise-save-logo.png" style={{ width: 100 }} />
-          <h1 style={{ fontWeight: "bolder", fontSize: 24 }}>WiseSave</h1>
-        </div>
+        <Link to="/">
+          <div
+            style={{
+              width: "100%",
+              height: 100,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+          >
+            <img
+              src="wise-save-logo.png"
+              style={{ width: 100, marginLeft: -30 }}
+            />
+            <h1 style={{ fontWeight: "bolder", fontSize: 24 }}>WiseSave</h1>
+          </div>
+        </Link>
         <Divider />
         <List>
           {[
-            { name: "Home", link: "/" },
+            { name: "Home", link: "/profile" },
             { name: "Profile", link: "/profile" },
             { name: "New Saving", link: "/thread" },
-            { name: "History", link: "/" }
+            { name: "History", link: "/profile" }
           ].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                <Link to={text.link}>{text.name}</Link>
-              </ListItemIcon>
-            </ListItem>
+            <Link to={text.link}>
+              <ListItem style={{ height: 60 }} button key={text}>
+                <ListItemIcon>
+                  <p>{text.name}</p>
+                </ListItemIcon>
+              </ListItem>
+            </Link>
           ))}
         </List>
         <Divider />

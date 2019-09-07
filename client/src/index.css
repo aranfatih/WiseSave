@@ -14,6 +14,9 @@ html {
   font-family: "Montserrat" !important;
 }
 
+.MuiPaper-elevation1 {
+  overflow-x: scroll
+}
 
 
 .buttonn{
